@@ -1,4 +1,5 @@
 import emptyImage from "../assets/no-projects.png";
+import Button from "./Button.jsx";
 
 export default function NoProjectSelected({ handleAdd }) {
   return (
@@ -12,12 +13,7 @@ export default function NoProjectSelected({ handleAdd }) {
       <h5 className="text-[#96928F]">
         Select a project or get started with a new task
       </h5>
-      <button
-        onClick={handleAdd}
-        className="bg-[#322E2B] text-[#96928F] rounded-md p-2 max-w-43"
-      >
-        Create New Project
-      </button>
+      <Button onClick={handleAdd}>Create New Project</Button>
     </div>
   );
 }

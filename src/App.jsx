@@ -8,26 +8,7 @@ function App() {
   const [selectedProject, setSelectedProject] = useState();
   const [currentView, setCurrentView] = useState("blank");
   const [prevView, setPrevView] = useState("blank");
-  const [projects, setProjects] = useState([
-    {
-      title: "project one",
-      id: 1,
-      desc: "this is a description",
-      dueDate: "2026-2-12",
-    },
-    {
-      title: "project two",
-      id: 2,
-      desc: "this is a description",
-      dueDate: "2026-2-12",
-    },
-    {
-      title: "project three",
-      id: 3,
-      desc: "this is a description",
-      dueDate: "2026-2-12",
-    },
-  ]);
+  const [projects, setProjects] = useState([]);
 
   const handleSelectProject = (id) => {
     setSelectedProject(id);
@@ -50,7 +31,7 @@ function App() {
 
   const handleDeleteProject = (id) => {
     setProjects((prev) => {
-      prev.filter((project) => project.id !== id);
+      return prev.filter((project) => project.id !== id);
     });
     setCurrentView("blank");
   };
@@ -63,6 +44,7 @@ function App() {
         return (
           <ProjectPage
             project={projects.find((project) => project.id === selectedProject)}
+            onDelete={handleDeleteProject}
           />
         );
       case "form":

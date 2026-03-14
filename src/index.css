@@ -8,17 +8,6 @@ button {
   height: 100vh;
 }
 
-.label-div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.label {
-  color: #63605d;
-}
-
 .input {
   @apply bg-[#D9D9D9] border-none rounded-md p-2;
 }
@@ -30,4 +19,3 @@ button {
 .selected {
   background-color: #c8c0c0;
 }
-

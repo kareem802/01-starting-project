@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import Input from "./Input";
 
 export default function ProjectForm({ onSave, onCancel }) {
   const titleRef = useRef();
@@ -30,44 +31,28 @@ export default function ProjectForm({ onSave, onCancel }) {
         </button>
       </div>
 
-      <div className="label-div">
-        <label htmlFor="title" className="label">
-          TITLE
-        </label>
-        <input
-          type="text"
-          placeholder="Project Name"
-          id="title"
-          className="input"
-          ref={titleRef}
-        />
-      </div>
-
-      <div className="label-div">
-        <label htmlFor="description" className="label">
-          DESCRIPTION
-        </label>
-        <textarea
-          type="text"
-          placeholder="Project Description"
-          id="description"
-          className="input"
-          ref={descRef}
-        />
-      </div>
-
-      <div className="label-div">
-        <label htmlFor="date" className="label">
-          DUE DATE
-        </label>
-        <input
-          type="date"
-          placeholder="Project Date"
-          id="date"
-          className="input"
-          ref={dateRef}
-        />
-      </div>
+      <Input
+        labelText={"title"}
+        placeholder="Project Title"
+        id="title"
+        ref={titleRef}
+        required
+      />
+      <Input
+        labelText={"desription"}
+        inputType={"textarea"}
+        placeholder="Project Description"
+        id="description"
+        ref={descRef}
+        required
+      />
+      <Input
+        required
+        labelText={"due date"}
+        id="date"
+        type="date"
+        ref={dateRef}
+      />
     </form>
   );
 }
