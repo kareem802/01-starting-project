@@ -1,4 +1,4 @@
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef } from "react";
 import TaskElement from "./TaskElement";
 
 export default function ProjectPage({ project, onDelete }) {
@@ -7,6 +7,7 @@ export default function ProjectPage({ project, onDelete }) {
 
   function handleAddTask() {
     const taskText = taskRef.current.value;
+    taskRef.current.value = "";
     setTasks((prev) => {
       return {
         ...prev,
@@ -47,7 +48,7 @@ export default function ProjectPage({ project, onDelete }) {
           Add task
         </button>
       </div>
-      <div className="bg-[#D9D9D9] rounded-md p-4 flex flex-col gap-4 min-h-36">
+      <div className="bg-[#D9D9D9] rounded-md p-4 flex flex-col gap-4 min-h-36 overflow-auto">
         {tasks[project.id] &&
           tasks[project.id].map((task) => {
             return (

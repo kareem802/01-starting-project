@@ -55,13 +55,14 @@ function App() {
         return <NoProjectSelected handleAdd={handleAddProject} />;
     }
   };
-
+  
   return (
     <div className="flex flex-row h-full">
       <Sidebar
         projects={projects}
         handleAddProject={handleAddProject}
         onSelectProject={handleSelectProject}
+        selectedProject={selectedProject}
       />
       {renderView()}
     </div>

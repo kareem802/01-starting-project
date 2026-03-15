@@ -44,7 +44,6 @@ export default function ProjectForm({ onSave, onCancel }) {
         placeholder="Project Description"
         id="description"
         ref={descRef}
-        required
       />
       <Input
         required
